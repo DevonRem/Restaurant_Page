@@ -6,7 +6,7 @@ import contactLoad from "./contactLoad";
 
 const content = document.querySelector('#content');
 const background = document.createElement('img');
-background.src = '../src/pizza-oven.jpg';
+background.src = './pizza-oven.jpg';
 background.classList.add('background')
 content.appendChild(background);
 
