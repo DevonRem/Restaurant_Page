@@ -1,14 +1,8 @@
 import pageLoad from "./page-load";
 import './style.css';
 import menuLoad from "./menuLoad"
+import contactLoad from "./contactLoad";
 
-/*Put the contents of each ‘tab’ inside of its own module. 
-Each module will export a function that creates a div element, 
-adds the appropriate content and styles to that element and then 
-appends it to the DOM. 
-so far pageLoad does the home page
-ALSO REMOVE FORM BEFORE LOADING NEW ONE*/
-//keep track of whch file
 
 const content = document.querySelector('#content');
 const background = document.createElement('img');
@@ -56,6 +50,7 @@ menuBtn.addEventListener('click', function(e) {
         contentContainer.remove();
         menuLoad();
         homeBtn.style.backgroundColor = 'white';
+        contactBtn.style.backgroundColor = 'white';
         menuBtn.style.backgroundColor = 'grey';
         tracker = 2;
         menucontent = document.querySelector('.menucontent');
@@ -65,11 +60,36 @@ menuBtn.addEventListener('click', function(e) {
 
 homeBtn.addEventListener('click', function(e) {
     if(tracker !== 1) {
-        menucontent.remove();
+        if(tracker===2){
+            menucontent.remove();
+        }
+        if(tracker===3){
+            contentContainer.remove();
+        }
+
         pageLoad();
         homeBtn.style.backgroundColor = 'grey';
         menuBtn.style.backgroundColor = 'white';
+        contactBtn.style.backgroundColor = 'white';
         tracker = 1;
+        contentContainer = document.querySelector('.contentContainer');
+    }
+
+});
+
+contactBtn.addEventListener('click', function(e) {
+    if(tracker !== 3) {
+        if(tracker===1) {
+            contentContainer.remove();
+        }
+        if(tracker===2){
+            menucontent.remove();
+        }
+        contactLoad();
+        contactBtn.style.backgroundColor = 'grey';
+        homeBtn.style.backgroundColor = 'white';
+        menuBtn.style.backgroundColor = 'white';
+        tracker = 3;
         contentContainer = document.querySelector('.contentContainer');
     }
 

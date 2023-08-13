@@ -33,6 +33,7 @@
 
 .contentContainer {
     grid-area: 2 / 1 / 3 / 4;
+    padding-left: 15px;
 }
 
 .menucontent {
