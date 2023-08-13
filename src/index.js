@@ -2,11 +2,12 @@ import pageLoad from "./page-load";
 import './style.css';
 import menuLoad from "./menuLoad"
 import contactLoad from "./contactLoad";
+import backgroundImg from './pizza-oven.jpg';
 
 
 const content = document.querySelector('#content');
-const background = document.createElement('img');
-background.src = './pizza-oven.jpg';
+const background = new Image();
+background.src = backgroundImg;
 background.classList.add('background')
 content.appendChild(background);
 
